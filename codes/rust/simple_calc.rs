@@ -11,6 +11,10 @@ fn calc(mut num: Vec<f64>, mut op: Vec<i32>) -> f64 {
 
     let mut index: usize = 0;
 
+    if op.len() == 0 {
+        return num[0];
+    }
+
     while index != op.len() {
         if op[index] < 2 {
             index += 1;
@@ -25,7 +29,9 @@ fn calc(mut num: Vec<f64>, mut op: Vec<i32>) -> f64 {
         }
     }
 
-    while op.len() != 0 {
+    if op.len() == 0 {
+        return num[0];
+    } else {
         match op[0] {
             0 => num[0] = num[0] + num[1],
             1 => num[0] = num[0] - num[1],
@@ -35,15 +41,27 @@ fn calc(mut num: Vec<f64>, mut op: Vec<i32>) -> f64 {
         num.remove(1);
         op.remove(0);
     }
-    println!("{}", num[0]);
 
-    num[0]
+    calc(num, op)
+
+    //while op.len() != 0 {
+        //match op[0] {
+            //0 => num[0] = num[0] + num[1],
+            //1 => num[0] = num[0] - num[1],
+            //_ => unreachable!(),
+        //}
+
+        //num.remove(1);
+        //op.remove(0);
+    //}
+    ////println!("{}", num[0]);
+
+    //num[0]
 }
 
 fn main() {
 
     let mut count: i32 = 0;
-    print!("aaa");
 
     for i in 0..4 {
         for j in 0..4 {
