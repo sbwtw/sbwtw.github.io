@@ -1,7 +1,7 @@
 
 fn calc(mut data: Vec<Vec<i32>>, n: usize) -> Vec<Vec<i32>> {
 
-    if n == 2 {
+    if n <= 2 {
         data[0][0] = 1;
         data[0][1] = 2;
         data[1][0] = 2;
@@ -33,7 +33,7 @@ fn calc(mut data: Vec<Vec<i32>>, n: usize) -> Vec<Vec<i32>> {
 }
 
 fn main() {
-    let n = 8;
+    let n = 6;
 
     let mut data: Vec<Vec<i32>> = Vec::new();
     for _ in 0..n {
