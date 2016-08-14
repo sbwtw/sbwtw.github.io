@@ -25,8 +25,8 @@ fn f(data: &mut Vec<i32>, num: i32) {
     f(data, num / p_num);
 }
 
-fn main()
-{
+fn main() {
+
     let mut buf = String::new();
 
     let _ = stdin().read_line(&mut buf);
